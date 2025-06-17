@@ -1,0 +1,41 @@
+<script>
+/*
+Trabajo 1
+Entrega para el 17/06/2025
+
+https://tn.com.ar/sociedad/2021/02/08/imc-que-es-y-como-se-calcula/?outputType=amp
+
+1 - Leer la nota
+2 - Armar un programa sobre dicha nota.
+        a - Determinar cuales son los datos de entrada para el imc.
+        b - Calcular el IMC.
+        c - Calcular estado (Delgadez - Normal - Obesidad etc)
+        d - Informar IMC y Estado.
+*/
+
+//Datos de entrada para el imc
+peso=parseFloat(prompt("Ingrese su peso en kilogramos: "))
+altura=parseFloat(prompt("Ingrese su altura en metros: "))
+
+document.writeln("Su peso es: "+(peso.toFixed(2))+ " kilogramos"+"<br>") 
+document.writeln("Su altura es: "+(altura.toFixed(2))+" metros"+"<br>") 
+
+//Calculo del imc
+imc=peso/(altura*altura)
+
+//Calculo del estado
+if (imc < 15)                   estado = "Delgadez muy severa"
+if (imc >= 15 && imc <= 15.9)   estado = "Delgadez severa"
+if (imc >= 16 && imc <= 18.4)   estado = "Delgadez"
+if (imc >= 18.5 && imc <= 24.9) estado = "Peso normal"
+if (imc >= 25 && imc <= 29.9)   estado = "Sobrepeso"
+if (imc >=30 && imc <= 34.9)    estado = "Obesidad moderada"
+if (imc >= 35 && imc <= 39.9)   estado = "Obesidad severa"
+if (imc >= 40)                  estado = "Obesidad mórbida"
+
+//Informe del IMC y Estado del usuario
+document.writeln("Su índice de masa corporal es: "+(imc.toFixed(1))+"<br>")
+document.writeln("Su estado es: "+estado+ "<br>")
+
+
+</script>
